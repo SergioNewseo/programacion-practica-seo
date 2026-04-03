@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Freepik Product Studio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>Freepik Product Studio</h1>
+        <p>
+          Convierte fotos de producto simples en composiciones profesionales usando
+          la API de Freepik.
+        </p>
+      </header>
+
+      <section class="card">
+        <h2>1) Credenciales</h2>
+        <label for="apiKey">API Key de Freepik</label>
+        <input
+          id="apiKey"
+          type="password"
+          placeholder="sk-..."
+          autocomplete="off"
+        />
+      </section>
+
+      <section class="card">
+        <h2>2) Imagen de referencia</h2>
+        <label for="referenceImage">Sube la foto del producto</label>
+        <input id="referenceImage" type="file" accept="image/*" />
+        <div id="referencePreview" class="preview hidden"></div>
+      </section>
+
+      <section class="card grid-2">
+        <div>
+          <h2>3) Formato y calidad</h2>
+
+          <label for="aspectRatio">Relación de aspecto</label>
+          <select id="aspectRatio">
+            <option value="1:1">Cuadrado (1:1)</option>
+            <option value="4:5">Vertical (4:5)</option>
+            <option value="16:9">Panorámico (16:9)</option>
+          </select>
+
+          <label for="model">Modelo</label>
+          <select id="model">
+            <option value="freepik-mystic-v2">freepik-mystic-v2</option>
+            <option value="freepik-v1">freepik-v1</option>
+          </select>
+
+          <label for="numImages">Cantidad de resultados</label>
+          <select id="numImages">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+
+          <label for="strength">Fuerza de referencia (0.1 - 1.0)</label>
+          <input id="strength" type="range" min="0.1" max="1" step="0.05" value="0.8" />
+          <output id="strengthValue">0.80</output>
+        </div>
+
+        <div>
+          <h2>4) Contexto creativo</h2>
+          <label for="prompt">Comentarios e información extra</label>
+          <textarea
+            id="prompt"
+            rows="11"
+            placeholder="Ej: Foto de producto premium sobre mesa de madera, luz natural lateral, plantas desenfocadas de fondo, estilo editorial para e-commerce."
+          ></textarea>
+        </div>
+      </section>
+
+      <section class="card actions">
+        <button id="generateBtn">Generar imágenes</button>
+        <p id="status" aria-live="polite"></p>
+      </section>
+
+      <section class="card">
+        <h2>Resultados</h2>
+        <div id="results" class="gallery"></div>
+      </section>
+    </main>
+
+    <dialog id="imageModal">
+      <img id="modalImage" alt="Resultado ampliado" />
+      <form method="dialog">
+        <button>Cerrar</button>
+      </form>
+    </dialog>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,149 @@
+:root {
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color-scheme: light;
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --text: #121723;
+  --muted: #5a6272;
+  --border: #d9e0ea;
+  --brand: #4f46e5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container {
+  width: min(1000px, 92vw);
+  margin: 2rem auto 3rem;
+}
+
+header h1 {
+  margin: 0;
+}
+
+header p {
+  margin-top: 0.35rem;
+  color: var(--muted);
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem;
+  margin: 0.95rem 0;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.25rem;
+}
+
+label {
+  display: block;
+  margin: 0.65rem 0 0.25rem;
+  font-weight: 600;
+}
+
+input,
+select,
+textarea,
+button {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.95rem;
+  background: #fff;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  font-weight: 700;
+  border: 0;
+  background: var(--brand);
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.95;
+}
+
+#status {
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+}
+
+.preview img {
+  max-width: 220px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  margin-top: 0.8rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.8rem;
+}
+
+.result-item {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.5rem;
+}
+
+.result-item img {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+
+.result-actions {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 0.45rem;
+}
+
+.result-actions button,
+.result-actions a {
+  flex: 1;
+  text-align: center;
+  text-decoration: none;
+  padding: 0.48rem 0.55rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 0.85rem;
+}
+
+.result-actions a {
+  color: var(--text);
+}
+
+#imageModal {
+  border: none;
+  border-radius: 12px;
+  padding: 1rem;
+  width: min(85vw, 900px);
+}
+
+#imageModal img {
+  width: 100%;
+  border-radius: 8px;
+}
